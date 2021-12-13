@@ -56,9 +56,20 @@ def updateVelocity(): #Update the global velocity of the robot for positioning d
     pass
 ```
 
-
 ## Game Playing Algorithm
-
+The game playing algorithm may have been the simplest aspect of this project and can be broken down into the following states.
+<img src='https://g.gravizo.com/svg?
+ digraph G {
+   main -> parse -> execute;
+   main -> init;
+   main -> cleanup;
+   execute -> make_string;
+   execute -> printf
+   init -> make_string;
+   main -> printf;
+   execute -> compare;
+ }
+'/>
 ## Conclusion
 
 ## Improvements
