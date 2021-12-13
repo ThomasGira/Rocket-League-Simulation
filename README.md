@@ -37,6 +37,7 @@ def robot2World(cords): #Takes in robot coordinates (rx, ry, rt) and returns wor
     y = posRoby + cords[0]*np.sin(posRobt)+cords[1]*np.cos(posRobt)
 
     return [x,y]
+```
 
 In order to get the position of the actual objects on the field a number of assumptions were made. The first being that physics doesnt exist. That meaning there was no physics based interactions of objects. The Opponent was hard coded just to move forward as a reference. The ball would stay put unless the robot was close enough, in which case it would "stick" to the front of the ball. The robot was assumed to move in the exact rotational and translations velocities as determined by the forward kinematics of the robot.
 
