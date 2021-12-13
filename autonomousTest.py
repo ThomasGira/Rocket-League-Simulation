@@ -36,7 +36,7 @@ lx = 100 # Distance from center of robot to center of wheel in x direction
 maxRPM = 1000
 
 ## Plotting
-mapScale = .5 #1px = 1cm
+mapScale = .25 #1px = 1cm
 MAP = cv.imread("Map.png") #Read in picture of map
 width = int(8*305*mapScale)
 height = int(12*305*mapScale)
@@ -130,7 +130,7 @@ def updateMap(): #Updates minimap
     cv.drawMarker(map, (int(objective[0]*mapScale),height-int(objective[1]*mapScale)) ,(0,255,0), markerType=cv.MARKER_TILTED_CROSS , markerSize=5, thickness=2, line_type=cv.LINE_AA)
 
     cv.imshow('Map',map)
-    
+    cv.imwrite('img.png',map) 
     out.write(map)
     
     pass
