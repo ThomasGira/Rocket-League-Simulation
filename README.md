@@ -42,6 +42,20 @@ def robot2World(cords): #Takes in robot coordinates (rx, ry, rt) and returns wor
 In order to get the position of the actual objects on the field a number of assumptions were made. The first being that physics doesnt exist. That meaning there was no physics based interactions of objects. The Opponent was hard coded just to move forward as a reference. The ball would stay put unless the robot was close enough, in which case it would "stick" to the front of the ball. The robot was assumed to move in the exact rotational and translations velocities as determined by the forward kinematics of the robot.
 
 ## Kinematics
+Kinematics played a suprisingly large role in the function of this simulation. This was because of the way our inverse kinematics functioned. Our kinematics funtioned first by gathering the current pose of the robot and the goal pose of the robot. From this a "delta pose" was created and inverse kinematics was performed to get mecanum wheel speeds. These values were then normalized on a scale from -255 to 255. Because of this the goal velocities were not the same as the actual velocoties. Because of this forward kinematics were performed on the the motor speeds sent to the robot and velocities were calcuated from this. These velocites were multiplied by a time set to get the change in pose of the robot. The code used is shown below.
+
+```python
+def updateVelocity(): #Update the global velocity of the robot for positioning data
+    global robotVelocity
+    T = np.array([[1,1,1,1],[-1,1,1,-1],[-1/(lx+ly),1/(lx+ly),-1/(lx+ly),1/(lx+ly)]])/r #Translation matrix
+    tempVelocity = np.dot(T,robotMotorSpeed) #Inverse Kinematics
+    vx = tempVelocity[0]*np.cos(posRobt)-tempVelocity[1]*np.sin(posRobt)
+    vy = tempVelocity[0]*np.sin(posRobt)+tempVelocity[1]*np.cos(posRobt)
+    vt = tempVelocity[2]
+    robotVelocity = [-vx[0],vy[0],vt[0]] #THIS SHIT IS FUCKED (IDK WHY ITS -vx)
+    pass
+```
+
 
 ## Game Playing Algorithm
 
