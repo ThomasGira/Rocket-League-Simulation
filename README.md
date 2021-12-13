@@ -18,7 +18,7 @@ Within the inital map there were four different updating objects mapped each mai
 
 The robot presented itself as more of a challenge to represent on the map. This was because position and orientation was necessary. In order to show both aspects, a blue triangle was used to represent the robot.
 
-''''python
+'''python
 def robotTriangle(): #Returns the points of a triangle corresponding to the robot's position and orientation.
     L = 250
     p1 = (L*np.sqrt(3)/3,0)
@@ -31,7 +31,7 @@ def robotTriangle(): #Returns the points of a triangle corresponding to the robo
 
     pts = np.array([(int(w1[0]*mapScale),height - int(w1[1]*mapScale)),(int(w2[0]*mapScale),height - int(w2[1]*mapScale)),(int(w3[0]*mapScale),height - int(w3[1]*mapScale))])
     return pts
-''''
+'''
 ## Kinematics
 
 ## Game Playing Algorithm
