@@ -59,8 +59,9 @@ def updateVelocity(): #Update the global velocity of the robot for positioning d
 ## Game Playing Algorithm
 The game playing algorithm may have been the simplest aspect of this project and can be broken down into the following states.
 
-<img src='strategy.png' alt = 'Strategy' width = 300/>
+<img src='strategy.png' alt = 'Strategy' width = 500/>
+
+The different states for the game rely on the position of the robot the ball and the proximity between each of the. The goal is to either try to score, get into a position to score or get between our goal and the ball to save it.
 
 ## Conclusion
-
-## Improvements
+I learned a lot throughout this process, most of it was not directly related to working on this project but more so the class as a whole. One of the biggest takeaways was that you can get a lot of work done through simulations however it is often case that the real world is not the same. We had a very solid game plan for our algorithm however our robot was not able to perform any of the necessary movements. I also learned a lot about reading in photos in OpenCV as well as manipulating images. [Here is a link to a GitHub repo with my code and a demonstration of the algorith](https://github.com/ThomasGira/Rocket-League-Simulation)
