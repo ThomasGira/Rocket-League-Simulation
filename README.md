@@ -6,7 +6,11 @@ This document outlines the work I did to create a Simulator for my teams MCEN 51
 
 ## Initial Map
 In order to have a map for the game playing algorithm I made a copy of the map provided by Professor Reamon and edited it to remove all of the labels. This map was then read in using openCV and rescaled so the ratio was equivalent to the game playing field.
+
 <img src="Map.png" alt="Initial Map" width="200"/>
+
+This map also had a scale multiplier so the size could be adjusted for different types of monitor resolutions. THis would also update the positional movement of objects on the playig field so they move at the same relative speed with different sized maps.
+
 ## Updating the Map
 
 ## Game Playing Algorithm
