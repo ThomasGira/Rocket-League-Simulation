@@ -58,7 +58,9 @@ def updateVelocity(): #Update the global velocity of the robot for positioning d
 
 ## Game Playing Algorithm
 The game playing algorithm may have been the simplest aspect of this project and can be broken down into the following states.
-<img src='strategy-removebg-preview.png' alt = 'Strategy' width = 200/>
+
+<img src='strategy-removebg-preview.png' alt = 'Strategy'/>
+
 ## Conclusion
 
 ## Improvements
