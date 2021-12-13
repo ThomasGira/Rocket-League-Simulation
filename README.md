@@ -16,7 +16,7 @@ Within the inital map there were four different updating objects mapped each mai
 
 <img src="updateMap.png" alt="Map with Objects" width="200"/>
 
-The robot presented itself as more of a challenge to represent on the map. This was because position and orientation was necessary. In order to show both aspects, a blue triangle was used to represent the robot.
+The robot presented itself as more of a challenge to represent on the map. This was because position and orientation was necessary. In order to show both aspects, a blue triangle was used to represent the robot. The coordinates of the triangle used were determined by first getting the points of a triangle centered around an origin at (0,0) these points were then all converted from the robot coordinate frame into the world coordinate frame. The code used to accomplish this is shown below.
 
 ```python
 def robotTriangle(): #Returns the points of a triangle corresponding to the robot's position and orientation.
@@ -31,6 +31,12 @@ def robotTriangle(): #Returns the points of a triangle corresponding to the robo
 
     pts = np.array([(int(w1[0]*mapScale),height - int(w1[1]*mapScale)),(int(w2[0]*mapScale),height - int(w2[1]*mapScale)),(int(w3[0]*mapScale),height - int(w3[1]*mapScale))])
     return pts
+
+def robot2World(cords): #Takes in robot coordinates (rx, ry, rt) and returns world coordinates (wx,wy,wt)
+    x = posRobx + cords[0]*np.cos(posRobt)-cords[1]*np.sin(posRobt)
+    y = posRoby + cords[0]*np.sin(posRobt)+cords[1]*np.cos(posRobt)
+
+    return [x,y]
 ```
 ## Kinematics
 
